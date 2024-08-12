@@ -19,3 +19,11 @@ WHERE Country = "United States"
 ORDER BY Population DESC
 LIMIT 2 OFFSET 2
 
+Lesson 12:
+1. SELECT Director, COUNT() as number_of_movies FROM movies 
+GROUP BY Director
+
+
+2. SELECT Director, SUM(domestic_sales + international_sales) as total_sales FROM movies as m
+INNER JOIN boxoffice as b on m.id = b.movie_id
+GROUP BY Director

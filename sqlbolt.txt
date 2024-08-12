@@ -1,0 +1,21 @@
+1. SELECT City, Population FROM north_american_cities
+WHERE Country = "Canada"
+
+2. SELECT * FROM North_american_cities
+WHERE Country = "United States" 
+ORDER BY Latitude DESC
+
+3. SELECT * FROM North_american_cities
+WHERE Longitude < (SELECT Longitude FROM North_american_cities WHERE City = "Chicago")
+ORDER BY Longitude ASC
+
+4. SELECT * FROM North_american_cities
+WHERE Country = "Mexico"
+ORDER BY Population DESC
+LIMIT 2
+
+5.SELECT City, Population FROM North_american_cities
+WHERE Country = "United States"
+ORDER BY Population DESC
+LIMIT 2 OFFSET 2
+

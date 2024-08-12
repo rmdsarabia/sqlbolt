@@ -1,3 +1,4 @@
+Exercise 1:
 1. SELECT City, Population FROM north_american_cities
 WHERE Country = "Canada"
 
@@ -19,6 +20,8 @@ WHERE Country = "United States"
 ORDER BY Population DESC
 LIMIT 2 OFFSET 2
 
+
+
 Lesson 12:
 1. SELECT Director, COUNT() as number_of_movies FROM movies 
 GROUP BY Director
@@ -27,3 +30,49 @@ GROUP BY Director
 2. SELECT Director, SUM(domestic_sales + international_sales) as total_sales FROM movies as m
 INNER JOIN boxoffice as b on m.id = b.movie_id
 GROUP BY Director
+
+
+
+SQLPD:
+1. White hat hacker has sent SQLPD exposed members' details of a shady site connected to various persons of interest. Please submit all members' details.
+SELECT * FROM members;
+
+2. A hacked site members' details have surfaced on a darknet forum. Please submit all members full names and number of comments' details.
+SELECT FullName, NumberOfComments
+FROM members;
+
+3.A hacked site subscribers' details have surfaced on a darknet forum. Please submit all subscribers addresses and subscribed since dates' details.
+SELECT Address, SubscribedSince
+FROM subscribers
+
+4.White hat hacker has sent SQLPD exposed members' details of a shady site connected to various persons of interest. Please submit all members password hashes' details. Please make sure there are no duplicates.
+SELECT DISTINCT PasswordHash
+FROM members;
+
+5. An illegal site's servers were seized in a recent operation. Please submit all users' details sorted by email addresses in ascending order.
+SELECT * FROM users
+ORDER BY EmailAddress ASC;
+
+6.White hat hacker has sent SQLPD exposed subscribers' details of a shady site connected to various persons of interest. Please submit all subscribers' details sorted by full names in descending order.
+SELECT * FROM subscribers
+ORDER BY FullName DESC;
+
+7.White hat hacker has sent SQLPD exposed members' details of a shady site connected to various persons of interest. Please submit all members usernames and addresses' details sorted by addresses in descending order. Please make sure there are no duplicates.
+SELECT DISTINCT Username, Address FROM members
+ORDER BY Address DESC;
+
+8.A mailing list of an illegal online service was sent to the SQLPD hot-line. Please submit all entries join dates, email addresses and number of password changes' details sorted by email addresses in descending order and then by join dates in descending order.
+SELECT JoinDate, EmailAddress, PasswordChanges
+FROM mailing_list
+ORDER BY EmailAddress DESC, EmailAddress DESC;
+
+9.White hat hacker has sent SQLPD exposed members' details of a shady site connected to various persons of interest. Please submit the top 3 members' details when sorted by addresses in ascending order and then by names in descending order.
+SELECT * FROM members
+ORDER BY Addres ASC, Name DESC 
+LIMIT 3;
+
+10. An illegal site's servers were seized in a recent operation. Please submit the top 20 users email addresses, number of posts and given names' details when sorted by given names in ascending order and then by number of posts in ascending order. Please make sure there are no duplicates.
+SELECT DISTINCT EmailAddress, Posts, GivenName
+FROM users
+ORDER BY GivenName ASC, Posts ASC
+LIMIT 20;
